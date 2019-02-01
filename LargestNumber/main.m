@@ -7,29 +7,24 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "ArrayUtility.h"
 
-int findLargest(NSArray *array) {
-    
-    int largest = [array[0] intValue];
-    
-    for (id num in array) {
-        
-        if ([num intValue] > largest) {
-            largest = [num intValue];
-        }
-    }
-    
-    
-    return largest;
-}
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
         
-        NSArray *myArray = @[@3, @7, @6, @8];
-        NSArray *anotherArray = @[@44, @5, @6];
+        NSArray *myArray = @[@3, @7, @6, @8, @99, @654, @3456,@22,@23];
+        NSArray *anotherArray = @[@1, @56, @44, @5, @6, @7];
         
-        NSLog(@"The largest numbers are %i, %i",findLargest(myArray),findLargest(anotherArray));
+//        NSLog(@"The largest numbers are %i, %i",findLargest(myArray),findLargest(anotherArray));
+        NSNumber *largest1 = [ArrayUtility medianNumber:myArray];
+        NSNumber *largest2 = [ArrayUtility medianNumber:anotherArray];
+        
+
+        
+        
+        NSLog(@"1: %@ \n 2: %@",largest1,largest2);
+        
         
     }
     return 0;
