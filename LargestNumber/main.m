@@ -10,7 +10,7 @@
 
 int findLargest(NSArray *array) {
     
-    int largest = 0;
+    int largest = [array[0] intValue];
     
     for (id num in array) {
         
